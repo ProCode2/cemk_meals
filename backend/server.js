@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
   res.render("home");
 })
 
+// set assets folder
+app.use(express.static("public"))
 // set template engine
 app.use(expressLayouts);
 app.set('views', path.join(__dirname, "src/views"));
