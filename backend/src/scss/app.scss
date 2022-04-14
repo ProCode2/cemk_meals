@@ -6,3 +6,55 @@ body {
   -webkit-font-smoothing: antialiased;
   color: $primary;
 }
+
+.cart-icon-li {
+  background-color: $primary;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+nav ul li {
+  transition: $smooth;
+  &:hover {
+    color: #ccc;
+  }
+}
+
+.hero {
+  background-color: $prim-hover;
+  padding: 8rem 0;
+}
+
+.add-to-cart {
+  border: 2px solid $primary;
+  color: $primary;
+  transition: $smooth;
+  &:hover {
+    background-color: $primary;
+    border: 2px solid white;
+    color: white;
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  transition: $smooth;
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+.empty-cart div {
+  background-color: $prim-hover;
+}
+
+.total-price-tag {
+  color: $primary;
+}
+
+.login {
+  background-color: $prim-hover;
+  min-height: calc(100vh - 120px);
+}

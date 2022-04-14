@@ -22,3 +22,35 @@ nav ul li:hover {
   background-color: #F7EBFF;
   padding: 8rem 0;
 }
+
+.add-to-cart {
+  border: 2px solid #181241;
+  color: #181241;
+  transition: all 300ms ease-in-out;
+}
+.add-to-cart:hover {
+  background-color: #181241;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #181241;
+  transition: all 300ms ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #483C71;
+}
+
+.empty-cart div {
+  background-color: #F7EBFF;
+}
+
+.total-price-tag {
+  color: #181241;
+}
+
+.login {
+  background-color: #F7EBFF;
+  min-height: calc(100vh - 120px);
+}
