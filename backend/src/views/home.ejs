@@ -1,155 +1,38 @@
-<section class="hero container mx-auto flex justify-between items-center mt-4">
-  <div class="w-1/2 text-left pl-12">
-    <h6 class="text-lg"><em>Looking for good India food?</em></h6>
-    <h1 class="text-6xl">Don't wait!</h1>
-    <button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Order Now</button>
-  </div>
-  <div class="w-1/2 flex justify-start items-center">
-    <img class="rounded-md shadow-md" src="/img/hero.webp" alt="Delicious Food" width="450px">
+<section class="hero flex justify-center items-center">
+  <div class="container mx-auto flex justify-between items-center mt-4">
+    <div class="w-1/2 text-left pl-12">
+      <h6 class="text-lg"><em>Looking for good Indian food?</em></h6>
+      <h1 class="text-6xl">Don't wait!</h1>
+      <button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Order Now</button>
+    </div>
+    <div class="w-1/2 flex justify-start items-center">
+      <img class="rounded-md shadow-md" src="/img/hero.webp" alt="Delicious Food" width="450px">
+    </div>
   </div>
 </section>
 <section class="food-items container mx-auto">
   <h1 class="font-bold m-4 text-lg">All items</h1>
   <div class="grid grid-cols-4 gap-12 my-8">
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
+    <% menuItems.forEach((item)=> { %>
+      <div class="item w-64">
+        <div class="text-center">
+          <img class="w-44 h-44 rounded-md shadow-md mb-4 mx-auto" src="<%= item.image_link %>" alt="item name">
+          <h2 class="mb-2 text-lg ">
+            <%= item.name %>
+          </h2>
+          <span class="<%= item.veg ? 'bg-green-200' : 'bg-red-300' %> rounded-md px-3 py-1 text-sm">
+            <%= item.veg ? "veg" : "non-veg" %>
+          </span>
+          <div class="flex justify-around items-center mt-6">
+            <span class="font-bold text-lg">₹<%= item.price / 100 %></span>
+            <button data-item="<%= JSON.stringify(item) %>"
+              class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
+              <span>+</span>
+              <span>Add</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item w-64">
-      <div class="text-center">
-        <img class="w-44 rounded-md shadow-md mb-4 mx-auto" src="/img/hero.webp" alt="item name">
-        <h2 class="mb-2 text-lg ">Alu Posto Bhaat</h2>
-        <span class="bg-green-200 rounded-md px-3 py-1 text-sm">veg</span>
-        <div class="flex justify-around items-center mt-6">
-          <span class="font-bold text-lg">₹250</span>
-          <button class="add-to-cart px-6 py-1 rounded-full flex justify-center items-center space-x-4">
-            <span>+</span>
-            <span>Add</span>
-          </button>
-        </div>
-      </div>
-    </div>
+      <% }) %>
   </div>
 </section>

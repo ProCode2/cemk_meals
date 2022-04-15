@@ -1,4 +1,6 @@
 @import "./variables";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
 
 body {
@@ -24,7 +26,7 @@ nav ul li {
 
 .hero {
   background-color: $prim-hover;
-  padding: 8rem 0;
+  height: calc(100vh - 120px);
 }
 
 .add-to-cart {
@@ -46,8 +48,9 @@ nav ul li {
   }
 }
 
-.empty-cart div {
+.empty-cart {
   background-color: $prim-hover;
+  height: calc(100vh - 120px);
 }
 
 .total-price-tag {
@@ -78,4 +81,9 @@ section.register {
       color: #ccc;
     }
   }
+}
+
+.noty_theme__mint {
+  border-radius: 50px !important;
+  padding-left: 8px !important;
 }
