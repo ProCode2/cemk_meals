@@ -37,7 +37,6 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig))
 const passportInit = require("./app/config/passport");
-const process = require("process");
 passportInit(passport);
 app.use(passport.initialize());
 app.use(passport.session());
