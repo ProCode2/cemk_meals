@@ -35,7 +35,7 @@ nav ul li:hover {
 }
 
 .btn-primary {
-  background-color: #181241;
+  background: #181241;
   transition: all 300ms ease-in-out;
 }
 .btn-primary:hover {
@@ -50,7 +50,26 @@ nav ul li:hover {
   color: #181241;
 }
 
-.login {
+section.login {
   background-color: #F7EBFF;
   min-height: calc(100vh - 120px);
+}
+section.login a {
+  color: #181241;
+  transition: all 300ms ease-in-out;
+}
+section.login a:hover {
+  color: #ccc;
+}
+
+section.register {
+  background-color: #F7EBFF;
+  min-height: calc(100vh - 120px);
+}
+section.register a {
+  color: #181241;
+  transition: all 300ms ease-in-out;
+}
+section.register a:hover {
+  color: #ccc;
 }

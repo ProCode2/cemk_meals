@@ -39,7 +39,7 @@ nav ul li {
 }
 
 .btn-primary {
-  background-color: $primary;
+  background: $primary;
   transition: $smooth;
   &:hover {
     background-color: $secondary;
@@ -54,7 +54,28 @@ nav ul li {
   color: $primary;
 }
 
-.login {
+section.login {
   background-color: $prim-hover;
   min-height: calc(100vh - 120px);
+
+  a {
+    color: $primary;
+    transition: $smooth;
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+
+section.register {
+  background-color: $prim-hover;
+  min-height: calc(100vh - 120px);
+
+  a {
+    color: $primary;
+    transition: $smooth;
+    &:hover {
+      color: #ccc;
+    }
+  }
 }
