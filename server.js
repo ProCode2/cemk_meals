@@ -21,7 +21,8 @@ const sessionDBaccess = new sessionPool({
   password: process.env.DB_PASS,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  ssl: process.env.DB_SSL
 })
 const sessionConfig = {
   store: new pgSession({
