@@ -14,7 +14,8 @@
         <% Object.keys(session.cart.items).forEach((cartItem)=> { %>
           <div class="food-item flex items-center border-b border-gray-300 py-4 text-sm">
             <div class="flex-1 flex items-center justify-center space-x-2">
-              <img src="/img/hero.webp" alt="food name" width="100px">
+              <img class="w-24 h-24 rounded-md shadow-md" src="<%= session.cart.items[cartItem].item.image_link %>"
+                alt="food name">
               <div class="flex flex-col items-center justify-center space-y-3">
                 <h3>
                   <%= session.cart.items[cartItem].item.name %>
@@ -42,13 +43,16 @@
         <span class="font-bold text-2xl total-price-tag">₹<%= session.cart.totalPrice / 100 %></span>
       </div>
       <div class="text-right mt-6">
-        <form action="">
-          <input class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
-          <br>
-          <button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Order Now</button>
-        </form>
-        <!-- <a href="/login"><button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Login to
-          Continue</button></a> -->
+        <% if (user) { %>
+          <form action="/orders" method="post">
+            <input name="address" class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
+            <br>
+            <button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Order Now</button>
+          </form>
+          <% } else { %>
+            <a href="/login"><button class="px-6 py-2 text-white rounded-full font-bold mt-4 btn-primary">Login to
+                Continue</button></a>
+            <% } %>
       </div>
     </div>
     <% } else { %>

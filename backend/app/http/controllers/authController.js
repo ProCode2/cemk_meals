@@ -35,7 +35,11 @@ const authController = () => {
             req.flash("error", info.message);
             return next(err);
           }
-          return res.redirect("/")
+          if (user.admin) {
+            return res.redirect("/admin/orders");
+          } else {
+            return res.redirect("/orders");
+          }
         })
       })(req, res, next);
     },

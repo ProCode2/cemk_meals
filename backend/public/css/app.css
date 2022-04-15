@@ -352,7 +352,16 @@ section.register a:hover {
   color: #ccc;
 }
 
+section.order {
+  background-color: #F7EBFF;
+  min-height: calc(100vh - 120px);
+}
+
 .noty_theme__mint {
   border-radius: 50px !important;
   padding-left: 8px !important;
+}
+
+a.link {
+  color: #483C71;
 }
