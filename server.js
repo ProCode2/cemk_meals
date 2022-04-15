@@ -17,12 +17,8 @@ const PORT = process.env.PORT || 3000;
 app.use(flash())
 // session config
 const sessionDBaccess = new sessionPool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  ssl: process.env.DB_SSL
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.PRODUCTION ? { rejectUnauthorized: false } : false
 })
 const sessionConfig = {
   store: new pgSession({
@@ -41,6 +37,7 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig))
 const passportInit = require("./app/config/passport");
+const process = require("process");
 passportInit(passport);
 app.use(passport.initialize());
 app.use(passport.session());
