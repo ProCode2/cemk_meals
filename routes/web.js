@@ -28,10 +28,13 @@ const initRoutes = (app) => {
 
   // orders
   app.get("/orders", auth, orderController().getOrder)
+  app.get("/orders/:id", auth, orderController().show)
   app.post("/orders", auth, orderController().storeOrder)
 
   // admin routes
   app.get("/admin/orders", admin, AdminOrderController().getOrder)
+  app.post("/admin/order/status", admin, AdminOrderController().updateStatus)
+
 }
 
 module.exports = {

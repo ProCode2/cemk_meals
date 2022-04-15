@@ -1,6 +1,14 @@
 const { prisma } = require("../../models/db");
 const moment = require("moment");
 
+const statusPrecedence = {
+  "order_placed": 0,
+  "confirmed": 1,
+  "prepared": 2,
+  "delivered": 3,
+  "completed": 4
+}
+
 const orderController = () => {
   return {
     async getOrder(req, res) {
@@ -30,6 +38,20 @@ const orderController = () => {
       };
       req.flash("success", "Order placed successfully");
       res.redirect("/orders")
+    },
+    async show(req, res) {
+      const order = await prisma.order.findFirst({
+        where: {
+          id: req.params.id,
+          userId: req.user.id,
+        }
+      });
+
+      if (order) {
+        res.render("customers/singleOrder", {order, statusPrecedence});
+      } else {
+        return res.redirect("/");
+      }
     }
   }
 }

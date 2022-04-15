@@ -10,11 +10,26 @@ const orderController = () => {
             not: "completed"
           }
         },
+        orderBy: { createdAt: 'desc' },
         include: {
           user: true
         }
       });
       res.render("admin/orders", { orders, moment })
+    },
+
+    async updateStatus(req, res) {
+      const {orderId: id, status} = req.body;
+
+      const order = await prisma.order.update({
+        where: {
+          id
+        },
+        data: {
+          status
+        }
+      });
+      return res.redirect("/admin/orders");
     }
   }
 }
